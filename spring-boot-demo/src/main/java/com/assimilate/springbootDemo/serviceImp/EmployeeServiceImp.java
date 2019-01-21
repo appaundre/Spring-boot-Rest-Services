@@ -22,8 +22,32 @@ public class EmployeeServiceImp implements EmployeeService {
 	@Override
 	public ResponseConst registration(Registration regi) {
 		String msg = empDao.addUser(regi);
-		ResponseConst res=new ResponseConst();
+		ResponseConst res = new ResponseConst();
 		res.setMsg(msg);
 		return res;
+	}
+
+	@Override
+	public List<Registration> getEmployee() {
+		List<Registration> list = empDao.getEmployee();
+		return list;
+	}
+
+	@Override
+	public Registration getOneEmployee(int id) {
+		Registration emp = empDao.getOneEmployee(id);
+		return emp;
+	}
+
+	@Override
+	public String updateEmployee(Registration emp, int id) {
+		String msg = empDao.updateEmployee(emp, id);
+		return msg;
+	}
+
+	@Override
+	public String deleteEmployee(int id) {
+		String msg = empDao.deleteEmployee(id);
+		return msg;
 	}
 }

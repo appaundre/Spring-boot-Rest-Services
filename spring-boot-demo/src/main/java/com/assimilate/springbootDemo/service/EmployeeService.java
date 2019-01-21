@@ -10,4 +10,12 @@ public interface EmployeeService {
 
 	ResponseConst registration(Registration regi);
 
+	List<Registration> getEmployee();
+
+	Registration getOneEmployee(int id);
+
+	String updateEmployee(Registration emp, int id);
+
+	String deleteEmployee(int id);
+
 }
